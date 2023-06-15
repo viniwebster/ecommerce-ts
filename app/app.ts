@@ -1,15 +1,11 @@
-import { NegociacaoController } from "./controllers/negociacao-controller.js";
-import { negociacoesView } from "./views/negociacoes-view.js";
+import { CompraController } from "./models/compras-controller.js";
+import index from "./pagina/index.js";
+index
 
-const controller = new NegociacaoController();
-const form = document.querySelector('.form');
-
-if(form){
-    form.addEventListener('submit', event => {
-        event.preventDefault()
-        controller.adiciona();
-    })
-} else {
-    throw Error('Não foi possível inicializar a aplicação. Verifique se o form existe');
-}
+const compra = new CompraController();
+const btnBuy = document.querySelector('.form') as HTMLFormElement;
+btnBuy.addEventListener('submit', (e)=>{
+    e.preventDefault();
+    compra.adiciona();
+})
 

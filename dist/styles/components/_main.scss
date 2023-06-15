@@ -1,0 +1,207 @@
+.product__container{
+    width: 100vw;
+    max-width: 1200px;
+    gap: 5rem;
+    min-height: calc(100vh - (100px + (2rem * 2)));
+    padding: 2rem 0;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.product__img{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+   /*  padding: 0 10rem; */
+    gap: 30px;
+    width: 50%;
+}
+
+.img__primary{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+    gap: 30px;
+    width: 70%;
+}
+
+.img__primary img{
+    width: 100%;
+    border-radius: 13px;
+    cursor: pointer;
+}
+
+.img_container{
+    display: flex;
+    align-items: center;
+}
+
+.sliders {
+    display: none;
+    align-items: center;
+    position: absolute;
+    justify-content: space-between;
+    width: 100%;
+
+    .btn-background{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: $white;
+        width: 50px;
+        height: 50px;
+        border-radius: 100px;
+        cursor: pointer;
+        .btn-slide{
+            z-index: 5555555;
+            display: flex;
+            width: 15px;
+        }
+    }
+}
+
+
+.img__thumbs{
+    display: flex;
+    justify-content: space-between;
+    .img__itens{
+        width: 20%;
+        cursor: pointer;
+        img{
+            width: 100%;
+            border-radius: 8px;
+        }
+        
+    }
+}
+
+.active img{
+    border: 4px solid $primary;
+    opacity: 70%;
+}
+
+.product__desc{
+    flex: 1;
+   /*  padding: 6rem 0; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 2rem;
+
+    h2{
+        color: $primary;
+        font-weight: 700;
+        font-size: 1.25em;
+    }
+
+    .title{
+        font-size: 3rem;
+        font-weight: 700;
+        color: $secundary-very-dark;
+    }
+
+    .desc{
+        font-size: 1.1rem;
+        color: $secundary-dark-grayish;
+        line-height: 1.5rem;
+    }
+
+    .price__container{
+        .total{
+            .price{
+                width: 20%;
+                outline: none;
+                border: none;
+                font-size: 1.5rem;
+                font-weight: 700;
+                &::-webkit-inner-spin-button{
+                    -webkit-appearance: none;
+                }
+            }
+            .tip{
+                font-size: 1rem;
+                font-weight: 700;
+                color: $primary;
+                background-color: $secundary;
+                border-radius: 5px;
+                margin-left: 10px;
+                padding: .2rem .4rem;
+            }
+            margin-bottom: 15px;
+        }
+
+        .first-price{
+            color: $secundary-dark-grayish;
+        }
+    }
+
+    .buttons__container{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 20px;
+        height: 55px;
+        .button__amount{
+            background-color: $secundary-light-grayish;
+            border-radius: 8px;
+            width: 150px;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            .btn{
+                height: 100%;
+                width: 40%;
+                font-size: 1.3rem;
+                color: $primary;
+                font-weight: 700;
+                background-color: transparent;
+                border: none;
+                cursor: pointer;
+            }
+            #amount{
+                width: 60%;
+                height: 100%;
+                border: none;
+                outline: none;
+                text-align: center;
+                background-color: $secundary-light-grayish;
+            }
+            input::-webkit-inner-spin-button {        
+                -webkit-appearance: none;  
+            }
+        }
+    
+        .btn-card{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 1rem;
+            flex: 1;
+            background-color: $primary;
+            color: $white;
+            font-weight: 700;
+            border-radius: 8px;
+            height: 100%;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0px 20px 50px -15px hsl(26, 74%, 70%);
+            img{
+                fill: white;
+            }
+
+            &:hover{
+                background-color: hsl(26, 93%, 71%);
+                transition: .3s;
+            }
+        }
+
+    }
+
+   
+}

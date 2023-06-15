@@ -1,0 +1,130 @@
+@media screen and (max-width: 890px) {
+    .header__container{
+        padding: 0 3rem;
+    }
+
+    .header__itens{
+        gap: 20px;
+        .nav__container{
+            gap: 1rem;
+        }
+    }
+
+    .perfil{
+        gap: 1.25rem;
+    }
+
+
+    .product__container{
+        flex-direction: column;
+        padding: 5rem 0;
+    }
+
+    .product__img{
+        width: 100%;
+    }
+
+    .sliders{
+        display: none;
+    }
+
+    .product__desc{
+        flex: 1;
+        padding: 0 8rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 2rem;
+    }
+
+    //modal
+    .modal-container{
+        min-width: 90vw;
+        .sliders{
+            display: none;
+        }
+    }
+
+}
+
+@media screen and (max-width: 600px) {
+
+    .header__container{
+        padding: 0 1rem;
+    }
+
+    .menu{
+        display: block;
+    }
+
+    .header__itens{
+        position: relative;
+        .nav__container{
+            display: none;
+            flex-direction: column;
+            position: absolute;
+            top: 100%;
+            left: -10%;
+            background-color: white;
+            box-shadow: 10px 20px 20px rgba(86, 86, 86, 0.325);
+            width: 70vw;
+            height: 100vh;
+            align-items: start;
+            gap: 32px;
+            z-index: 9999999;
+            .nav__itens{
+                margin-left: 20px;
+                font-weight: 700;
+                font-size: 1.25rem;
+                padding-bottom: 0px;
+            }
+
+
+        }
+    }
+
+    .product__container{
+        padding: 0;
+    }
+
+    .product__img{
+        width: 100vw;
+    }
+
+    .img__primary{
+        width: 100%;
+    }
+    
+    .img__primary img{
+        border-radius: 0;
+    }
+
+    .img__thumbs{
+        display: none;
+    }
+
+
+    .product__desc{
+        flex: 1;
+        padding: 0 2rem 3rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 2rem;
+    }
+
+}
+
+@media screen and (max-width: 340px) {
+    .product__desc .buttons__container{
+        flex-direction: column;
+        width: 100%;
+        .button__amount{
+            width: 100%;
+        }
+        .btn-card{
+            width: 100%;
+            padding: .5rem 0;
+        }
+    }
+}

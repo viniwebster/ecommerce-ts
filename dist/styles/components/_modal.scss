@@ -1,0 +1,29 @@
+.modal{
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 999999999;
+    width: 100vw;
+    top: 0;
+    background-color: rgba(0, 0, 0, 0.808);
+    position: fixed;
+}
+
+
+.modal-container{
+    position: relative;
+    width: 40vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    z-index: 999999999;
+    .img__primary{
+        .close{
+            width: 20px;
+            align-self: end;
+            cursor: pointer;
+        }
+    }
+}
+

@@ -1,42 +1,185 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Negociações</title>
-    <link rel="stylesheet" href="css/bootstrap.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css" 
+  integrity="sha512-NmLkDIU1C/C88wi324HBc+S2kLhi08PN5GDeUVVVC/BVt/9Izdsc9SVeVfA1UZbY3sHUlDSyRXhCzHfr6hmPPw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="./styles/components/style.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"/>
+  
+  <title>Frontend Mentor | E-commerce product page</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    .attribution { font-size: 11px; text-align: center; }
+    .attribution a { color: hsl(228, 45%, 44%); }
+  </style>
 </head>
-
-<body class="container">
-
-    <h1 class="text-center">Negociações</h1>
-
-    <div id="mensagemView"></div>
-
-    <form class="form">
-
-        <div class="form-group">
-            <label for="data">Data</label>
-            <input type="date" id="data" class="form-control" required autofocus/>
-        </div>
-
-        <div class="form-group">
-            <label for="quantidade">Quantidade</label>
-            <input type="number" min="1" step="1" id="quantidade" class="form-control" value="1" required/>
-        </div>
-
-        <div class="form-group">
-            <label for="valor">Valor</label>
-            <input id="valor" type="number" class="form-control"  min="0.01" step="0.01" value="0.0" required />
-        </div>
-
-        <button class="btn btn-primary" type="submit">Incluir</button>
-    </form>
-    <br>
-    <br>
+<body>
+  
+  <header>
     
-    <div id="negociacoesView"></div>
+    <section class="container">
+      <div class="header__container">
+        <div class="header__itens">
 
-    <script type="module" src="js/app.js"></script>
+          <img class="menu" id="menu" src="./images/icon-menu.svg" alt="" srcset="">
+
+          <img src="./images/logo.svg" alt="" srcset="">
+          <nav>
+            <ul class="nav__container">
+              <li><a class="nav__itens"href="#">Collections</a></li>
+              <li><a class="nav__itens"href="#">Men</a></li>
+              <li><a class="nav__itens"href="#">Women</a></li>
+              <li><a class="nav__itens"href="#">About</a></li>
+              <li><a class="nav__itens"href="#">Contact</a></li>
+            </ul>
+          </nav>
+        </div>
+
+        <div class="perfil">
+          <div class="carrinho" id="cart">
+            <div class="quantidade"> <input type="number" value="0" id="quantidade"></div>
+            <img src="./images/icon-cart.svg" alt="" srcset="">
+          </div>
+
+          <div class="cart_itens-container">
+            <h3>Cart</h3>
+            <div class="item-comprado empty ">
+              <ul id="lista">
+                <!-- li's com os produtos comprados -->
+                
+                <!-- <li class="lista-item">
+                  <img class="item-img" src="./images/image-product-1-thumbnail.jpg" alt="">
+                  <div class="item-desc">
+                    <p>Fall Limited Edition sneakers</p>
+                    <span class="value">$125.00 x 3</span>   <span class="total">$375.00</span>
+                  </div>
+                  <img class="btn-delete" src="./images/icon-delete.svg" alt="" srcset="">
+                </li> -->
+
+              </ul>
+             <!--  Your cart is empty -->
+            </div>
+            <input class="btn-checkout" type="button" value="Checkout">
+          </div>
+
+          <div class="avatar">
+            <img src="./images/image-avatar.png" alt="" srcset="">
+          </div>
+        </div>
+      </div>
+
+    </section>
+
+  </header>
+
+  <main>
+    <section>
+      <div class="product__container">
+        <div class="product__img">
+         
+          <div class="img__primary swiper">
+        
+            <div class="img_container">
+                <img class="swiper-slide" id="img-principal" src="./images/image-product-1.jpg" alt="" srcset="">
+                
+              <div class="sliders">
+                <div class="btn-background">
+                  <img class="btn-slide" src="./images/icon-previous.svg" alt="" srcset="">
+                </div>
+                <div class="btn-background">
+                  <img class="btn-slide" src="./images/icon-next.svg" alt="" srcset="">
+                </div>  
+              </div> 
+            
+              </div>
+              
+              <!-- carrosel miniaturas  -->
+              <div class="img__thumbs swiper-wrapper">
+                <div class="img__itens swiper-slide active">
+                  <img class="img-icon" src="./images/image-product-1-thumbnail.jpg" alt="" id="1">
+                </div>
+    
+                <div class="img__itens swiper-slide">
+                  <img class="img-icon" src="./images/image-product-2-thumbnail.jpg" alt="" id="2">
+                </div>
+    
+                <div class="img__itens swiper-slide">
+                  <img class="img-icon" src="./images/image-product-3-thumbnail.jpg" alt="" id="3">
+                </div>
+    
+                <div class="img__itens swiper-slide">
+                  <img class="img-icon" src="./images/image-product-4-thumbnail.jpg" alt="" id="4">
+                </div>
+             </div>
+
+          </div>
+        </div>
+        
+
+        <div class="product__desc">
+            <h2 id="name">Sneaker Company</h2>
+
+            <h1 class="title">Fall Limited Edition Sneakers</h1>
+
+            <p class="desc">These low-profile sneakers are your perfect casual wear companion. Featuring a 
+            durable rubber outer sole, they’ll withstand everything the weather can offer.</p>
+
+            <div class="price__container">
+              <div class="total">
+                <em>$</em>
+                <input id="price" class="price" type="number" value="125.00">
+                <span class="tip">50%</span>
+              </div>
+              <s class="first-price">$250.00</s>
+            </div>
+
+            <form action="" class="form">
+              <div class="buttons__container">
+                <div class="button__amount">
+                  <input class="btn" type="button" value="-">
+                  <input id="amount" type="number" value="1">
+                  <input class="btn" type="button" value="+">
+                </div>
+
+                <button class="btn-card" id="buy"> 
+                  <img src="./images/icon-cart-white.svg" alt=""> 
+                  Add to cart 
+                </button>
+              </div>              
+            </form>
+
+        </div>
+      </div>
+    </div>
+
+    </section>
+    
+  </main>
+
+  <div class="modal" id="modal">
+    
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+    <script>
+        const swiper = new Swiper('.swiper', {
+        slidesPerView: 3,
+        spaceBetween: 20,
+        pagination: {
+        el: '.swiper-pagination',
+        type: 'bullets',
+        },
+        navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+        });
+    </script>
+    <script type="module" src="./js/app.js"></script>
 </body>
 </html>
