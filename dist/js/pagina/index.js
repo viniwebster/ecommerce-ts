@@ -1,7 +1,6 @@
 import { imgSlide, toggleImg, selectImg } from "./imagens.js";
 import { viewModal } from "./modal.js";
 import { toggleMenuMobile } from "./menuMobile.js";
-import { View } from "../models/compra-view.js";
 const btnQtd = document.querySelectorAll('.btn');
 const itemQtd = document.getElementById('amount');
 btnQtd.forEach(btn => {
@@ -31,12 +30,4 @@ function changeQtd(btn) {
     if (itemQtd.value <= 1)
         itemQtd.value = 1;
 }
-const btnDelete = document.querySelectorAll('.btn-delete');
-if (btnDelete) {
-    const btnView = new View();
-    btnDelete.forEach(btnDelete => {
-        btnDelete.addEventListener('click', () => btnView.removeDoCarrinho());
-    });
-}
-console.log(btnDelete);
 export default "./index.js";

@@ -1,38 +1,37 @@
+import { Compras } from "./compras";
+
 export class View {
     
-    private addOnCart(quantidade: number, preco: number): string {
+    carrinho: HTMLElement;
+    
+    constructor(){
+      this.carrinho = document.querySelector('.item-comprado') as HTMLElement;
+    }
+
+    private adicionaNoCarrinho(quantidade: number, preco: number): string {
         return `
-        <li class="lista-item">
-          <img class="item-img" src="./images/image-product-1-thumbnail.jpg" alt="Img product">
-            <div class="item-desc">
-              <p>Fall Limited Edition sneakers</p>
-              <span class="value"><span id="preco">${preco} x <span id="qtd">${quantidade}</span></span>   <span class="total">$${(quantidade * preco).toFixed(2)}</span>
-            </div>
-          <img id="delete" class="btn-delete" src="./images/icon-delete.svg" alt="Remove from cart" onclick="this.parentNode.remove()">
-        </li>`
+            <ul id="lista">
+                  <li class="lista-item">
+                  <img class="item-img" src="./images/image-product-1-thumbnail.jpg" alt="">
+                    <div class="item-desc">
+                      <p>Fall Limited Edition sneakers</p>
+                      <span class="value">$${preco} x<span id="qtd"> ${quantidade} </span></span>   <span class="total">$${preco * quantidade}</span>
+                    </div>
+                  <img class="btn-delete" src="./images/icon-delete.svg" alt="Button Remove" onclick="this.parentNode.remove(),
+                  document.getElementById('quantidade').value = 0,
+                  document.querySelector('.item-comprado').innerHTML = 'Youre cart is empty'; ">
+                </li>
+                <input class="btn-checkout" type="button" value="Checkout">
+            </ul>
+            `
     }
 
 
-    adicionaNoCarrinho(quantidade: number, valor: number): void {
-      const carrinho = document.getElementById('lista') as HTMLElement;
-      carrinho.innerHTML += this.addOnCart(quantidade, valor);
-
-      const quantidadeCarrinho = document.getElementById('quantidade') as HTMLInputElement;
-
-      let qtdAtual = quantidadeCarrinho.value;
-      let qtd = quantidade + parseInt(qtdAtual);
-      let qtdConvertida = qtd.toString()
-
-      quantidadeCarrinho.value = qtdConvertida;
-  }
-
-    removeDoCarrinho(): void{
-      const quantidade = document.querySelector('#qtd') as HTMLElement;
-      const quantidadeCarrinho = document.getElementById('quantidade') as HTMLInputElement;
+    public update(quantidade: number, preco: number): void {
+      this.carrinho.innerHTML = this.adicionaNoCarrinho(quantidade, preco);
       
-      let qtdCarrinho = quantidadeCarrinho.value;
-      let qtdAtual = parseInt(quantidade.innerHTML) - parseInt(qtdCarrinho);
-      quantidadeCarrinho.value = qtdAtual.toString();
+      const quantidadeCarrinho = document.getElementById('quantidade') as HTMLInputElement;
+      quantidadeCarrinho.value = quantidade.toString()
   }
-   
+
 }

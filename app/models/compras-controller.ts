@@ -24,7 +24,7 @@ export class CompraController {
         )
 
         this.atualizaLista(compra);
-        this.comprasView.adicionaNoCarrinho(compra.quantidade, compra.valor);
+        this.comprasView.update(compra.quantidade, compra.valor);
         
         console.log(this.compras.listaCompras());
     }

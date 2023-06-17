@@ -12,7 +12,7 @@ export class CompraController {
     adiciona() {
         const compra = Compra.criaCompra(this.nome.innerHTML, this.quantidade.value, this.preco.value);
         this.atualizaLista(compra);
-        this.comprasView.adicionaNoCarrinho(compra.quantidade, compra.valor);
+        this.comprasView.update(compra.quantidade, compra.valor);
         console.log(this.compras.listaCompras());
     }
     atualizaLista(compra) {
